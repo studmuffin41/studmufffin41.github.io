@@ -32,7 +32,7 @@
 
 <script>
 (function() {
-    const PASSWORD = "mySecret123"; // Change this
+    const PASSWORD = "111superAI222"; // Change this
     const userPass = prompt("Enter password:");
 
     if (userPass !== PASSWORD) {
@@ -46,41 +46,475 @@
     function startQuiz() {
         const quizQuestions = [
             {
-                question: "1. What color is the sky?",
+                question: "1. A company makes forecasts each quarter to decide how to optimize operations to meet expected demi company uses ML models to make these forecasts. An Al practitioner is writing a report about the trained ML models to provide transparency and explain to company stakeholders. What should the Al practitioner include in the report to meet the transparency and explainability requirements?",
                 options: [
-                    { label: "A", text: "Blue", isCorrect: true },
-                    { label: "B", text: "HTML", isCorrect: false },
-                    { label: "C", text: "JavaScript", isCorrect: false },
-                    { label: "D", text: "CSS", isCorrect: false }
+                    { label: "A", text: "Code for model training", isCorrect: false },
+                    { label: "B", text: "Partial dependence plots (PDPs)", isCorrect: true },
+                    { label: "C", text: "Sample data for training", isCorrect: false },
+                    { label: "D", text: "Model convergence tables", isCorrect: false }
                 ]
             },
             {
-                question: "2. Best WWF wrestler ever?",
+                question: "2. A law firm wants to build an Al application by using large language models (LLMs). The application will read legal documents and extract key points from the documents. Which solution meets these requirements?",
                 options: [
-                    { label: "A", text: "Jake the Snake", isCorrect: false },
-                    { label: "B", text: "Andre the Giant", isCorrect: false },
-                    { label: "C", text: "Hulk Hogan", isCorrect: true },
-                    { label: "D", text: "The Undertaker", isCorrect: false }
+                    { label: "A", text: "Build an automatic named entity recognition system.", isCorrect: false },
+                    { label: "B", text: "Create a recommendation engine.", isCorrect: false },
+                    { label: "C", text: "Develop a summarization chatbot.", isCorrect: true },
+                    { label: "D", text: "Develop a multi-language translation system.", isCorrect: false }
                 ]
             },
             {
-                question: "3. Best NBA team of the 90's?",
+                question: "3. A company wants to classify human genes into 20 categories based on gene characteristics. The company needs an ML algorithm to document how the inner mechanism of the model affects the output. Which ML algorithm meets these requirements?",
                 options: [
-                    { label: "A", text: "Bulls", isCorrect: false },
-                    { label: "B", text: "Lakers", isCorrect: false },
-                    { label: "C", text: "Jazz", isCorrect: true },
-                    { label: "D", text: "Suns", isCorrect: false }
+                    { label: "A", text: "Decision trees", isCorrect: true },
+                    { label: "B", text: "Linear regression", isCorrect: false },
+                    { label: "C", text: "Logistic regression", isCorrect: false },
+                    { label: "D", text: "Neural networks", isCorrect: false }
                 ]
             },
             {
-                question: "4. Which one is not a fruit?",
+                question: "4. A company has built an image classification model to predict plant diseases from photos of plant leaves. The company wants to evaluate how many images the model classified correctly. Which evaluation metric should the company use to measure the model's performance?",
+                options: [
+                    { label: "A", text: "R-squared score", isCorrect: false },
+                    { label: "B", text: "Accuracy", isCorrect: true },
+                    { label: "C", text: "Root mean squared error (RMSE)", isCorrect: false },
+                    { label: "D", text: "Learning rate", isCorrect: false }
+                ]
+            },
+            {
+                question: "5. A company is using a pre-trained large language model (LLM) to build a chatbot for product recommendations. The company needs the LLM outputs to be short and written in a specific language. Which solution will align the LLM response quality with the company's expectations?",
+                options: [
+                    { label: "A", text: "Adjust the prompt.", isCorrect: true },
+                    { label: "B", text: "Choose an LLM of a different size.", isCorrect: false },
+                    { label: "C", text: "Increase the temperature", isCorrect: false },
+                    { label: "D", text: "Increase the Top K value.", isCorrect: false }
+                ]
+            },
+            {
+                question: "6. A company uses Amazon SageMaker for its ML pipeline in a production environment. The commanuhanlaran innut data sizes up to 1 GB and processing times up to 1 hour. The company needs near real-time Which SageMaker inference option meets these requirements?",
+                options: [
+                    { label: "A", text: "Real-time inference", isCorrect: false },
+                    { label: "B", text: "Serverless inference", isCorrect: false },
+                    { label: "C", text: "Asynchronous inference", isCorrect: true },
+                    { label: "D", text: "Batch transform", isCorrect: false }
+                ]
+            },
+            {
+                question: "7. A company is using domain-specific models. The company wants to avoid creating new models from the beginning. The company instead wants to adapt pre-trained models to create models for new, related tasks. Which ML strategy meets these requirements?",
+                options: [
+                    { label: "A", text: "Increase the number of epochs.", isCorrect: false },
+                    { label: "B", text: "Use transfer learning.", isCorrect: true },
+                    { label: "C", text: "Decrease the number of epochs.", isCorrect: false },
+                    { label: "D", text: "Use unsupervised learning.", isCorrect: false }
+                ]
+            },
+            {
+                question: "8. A company is building a solution to generate images for protective eyewear. The solution must have high accuracy and must minimize the risk of incorrect annotations. Which solution will meet these requirements?",
+                options: [
+                    { label: "A", text: "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus", isCorrect: true },
+                    { label: "B", text: "Data augmentation by using an Amazon Bedrock knowledge base", isCorrect: false },
+                    { label: "C", text: "Image recognition by using Amazon Rekognition", isCorrect: false },
+                    { label: "D", text: "Data summarization by using Amazon QuickSight Q", isCorrect: false }
+                ]
+            },
+            {
+                question: "9. A Company wants to create a chatbot by using a foundation model(FM) on Amazon Bedrock. The FM needs to access encrypted data that is stored in an Amazon S3 bucket. The data is encrypted with Amazon S3 managed keys (SSE-S3). The FM encounters a failure when attempting to access the S3 bucket data. Which solution will meet these requirements?",
+                options: [
+                    { label: "A", text: "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct encryption key.", isCorrect: true },
+                    { label: "B", text: "Set the access permissions for the S3 buckets to allow public access to enable access over the internet.", isCorrect: false },
+                    { label: "C", text: "Use prompt engineering techniques to tell the model to look for information in Amazon S3", isCorrect: false },
+                    { label: "D", text: "Ensure that the S3 data does not contain sensitive information.", isCorrect: false }
+                ]
+            },
+            {
+                question: "10. A company wants to use language models to create an application for inference on edge devices. The inference must have the lowest latency possible. Which solution will meet these requirements?",
+                options: [
+                    { label: "A", text: "Deploy optimized small language models (SLMs) on edge devices.", isCorrect: true },
+                    { label: "B", text: "Deploy optimized large language models (LLMs) on edge devices.", isCorrect: false },
+                    { label: "C", text: "Incorporate a centralized small language model (SLM) API for asynchronous communication with edge devices.", isCorrect: false },
+                    { label: "D", text: "Incorporate a centralized large language model (LLM) API for asynchronous communication with edge devices", isCorrect: false }
+                ]
+            },
+            {
+                question: "11. A company wants to build an ML model by using Amazon SageMaker. The company needs to share and manage variables for model development across multiple teams. Which SageMaker feature meets these requirements?",
+                options: [
+                    { label: "A", text: "Amazon SageMaker Feature Store", isCorrect: true },
+                    { label: "B", text: "Amazon SageMaker Data Wrangler", isCorrect: false },
+                    { label: "C", text: "Amazon SageMaker Clarify", isCorrect: false },
+                    { label: "D", text: "Amazon SageMaker Model Cards", isCorrect: false }
+                ]
+            },
+            {
+                question: "12. A company wants to use generative Al to increase developer productivity and software development.The company wants to use Amazon Q Developer. What can Amazon Q Developer do to help the company meet these requirements?",
+                options: [
+                    { label: "A", text: "Create software snippets, reference tracking, and open source license tracking.", isCorrect: true },
+                    { label: "B", text: "Run an application without provisioning or managing servers.", isCorrect: false },
+                    { label: "C", text: "Enable voice commands for coding and providing natural language search.", isCorrect: false },
+                    { label: "D", text: "Convert audio files to text documents by using ML models.", isCorrect: false }
+                ]
+            },
+            {
+                question: "13. A financial institution is using Amazon Bedrock to develop an Al application. The application is hosted in a VPC. To meet regulatory compliance standards, the VPC is not allowed access to any internet traffic. Which AWS service or feature will meet these requirements?",
+                options: [
+                    { label: "A", text: "AWS PrivateLink", isCorrect: true },
+                    { label: "B", text: "Amazon Macie", isCorrect: false },
+                    { label: "C", text: "Amazon CloudFront", isCorrect: false },
+                    { label: "D", text: "Internet gateway", isCorrect: false }
+                ]
+            },
+            {
+                question: "14. A company wants to develop an educational game where users answer questions such as the following: ..A jar contains six red, four green, and three yellow marbles. What is the probability of choosing a green marble from the jar?.. Which solution meets these requirements with the LEAST operational overhead?",
+                options: [
+                    { label: "A", text: "Use supervised learning to create a regression model that will predict probability.", isCorrect: false },
+                    { label: "B", text: "Use reinforcement learning to train a model to return the probability.", isCorrect: false },
+                    { label: "C", text: "Use code that will calculate probability by using simple rules and computations.", isCorrect: true },
+                    { label: "D", text: "Use unsupervised learning to create a model that will estimate probability density.", isCorrect: false }
+                ]
+            },
+            {
+                question: "15. Which metric measures the runtime efficiency of operating Al models?",
+                options: [
+                    { label: "A", text: "Customer satisfaction score (CSAT)", isCorrect: false },
+                    { label: "B", text: "Training time for each epoch", isCorrect: false },
+                    { label: "C", text: "Average response time", isCorrect: true },
+                    { label: "D", text: "Number of training instances", isCorrect: false }
+                ]
+            },
+            {
+                question: "16. A company is building a contact center application and wants to gain insights from customer conversations. The company wants to analyze and extract key information from the audio of the customer calls.Which solution meets these requirements?",
+                options: [
+                    { label: "A", text: "Build a conversational chatbot by using Amazon Lex.", isCorrect: false },
+                    { label: "B", text: "Transcribe call recordings by using Amazon Transcribe.", isCorrect: true },
+                    { label: "C", text: "Extract information from call recordings by using Amazon SageMaker Model Monitor.", isCorrect: false },
+                    { label: "D", text: "Create classification labels by using Amazon Comprehend.", isCorrect: false }
+                ]
+            },
+            {
+                question: "17. A company has petabytes of unlabeled customer data to use for an advertisement campaign. The company wants to classify its customers into tiers to advertise and promote the company's products. Which methodology should the company use to meet these requirements?",
+                options: [
+                    { label: "A", text: "Supervised learning", isCorrect: false },
+                    { label: "B", text: "Unsupervised learning", isCorrect: true },
+                    { label: "C", text: "Reinforcement learning", isCorrect: false },
+                    { label: "D", text: "Reinforcement learning from human feedback (RLHF)", isCorrect: false }
+                ]
+            },
+            {
+                question: "18. An Al practitioner wants to use a foundation model (FM) to design a search application. The search application must handle queries that have text and images. Which type of FM should the Al practitioner use to power the search application?",
+                options: [
+                    { label: "A", text: "Multi-modal embedding model", isCorrect: true },
+                    { label: "B", text: "Text embedding model", isCorrect: false },
+                    { label: "C", text: "Multi-modal generation model", isCorrect: false },
+                    { label: "D", text: "Image generation model", isCorrect: false }
+                ]
+            },
+            {
+                question: "19. A company uses a foundation model (FM) from Amazon Bedrock for an Al search tool. The company wants to fine-tune the model to be more accurate by using the company's data.Which strategy will successfully fine-tune the model?",
+                options: [
+                    { label: "A", text: "Provide labeled data with the prompt field and the completion field.", isCorrect: true },
+                    { label: "B", text: "Prepare the training dataset by creating a txt file that contains multiple lines in .csv format.", isCorrect: false },
+                    { label: "C", text: "Purchase Provisioned Throughput for Amazon Bedrock.", isCorrect: false },
+                    { label: "D", text: "Train the model on journals and textbooks.", isCorrect: false }
+                ]
+            },
+            {
+                question: "20. A company wants to use Al to protect its application from threats. The Al solution needs to check if an IP address is from a suspicious source. Which solution meets these requirements?",
+                options: [
+                    { label: "A", text: "Build a speech recognition system.", isCorrect: false },
+                    { label: "B", text: "Create a natural language processing (NLP) named entity recognition system.", isCorrect: false },
+                    { label: "C", text: "Develop an anomaly detection system.", isCorrect: true },
+                    { label: "D", text: "Create a fraud forecasting system.", isCorrect: false }
+                ]
+            },
+            {
+                question: "21. Which feature of Amazon OpenSearch Service gives companies the ability to build vector database applications?",
+                options: [
+                    { label: "A", text: "Integration with Amazon S3 for object storage ", isCorrect: false },
+                    { label: "B", text: "Support for geospatial indexing and queries", isCorrect: false },
+                    { label: "C", text: "Scalable index management and nearest neighbor search capability", isCorrect: true },
+                    { label: "D", text: "Ability to perform real-time analysis on streaming data", isCorrect: false }
+                ]
+            },
+            {
+                question: "22. Which option is a use case for generative Al models?",
+                options: [
+                    { label: "A", text: "Improving network security by using intrusion detection systems", isCorrect: false },
+                    { label: "B", text: "Creating photorealistic images from text descriptions for digital marketing", isCorrect: true },
+                    { label: "C", text: "Enhancing database performance by using optimized indexing", isCorrect: false },
+                    { label: "D", text: "Analyzing financial data to forecast stock market trends", isCorrect: false }
+                ]
+            },
+            {
+                question: "23. A company wants to build a generative Al application by using Amazon Bedrock and needs to choose a foundation model (FM). The company wants to know how much information can fit into one prompt. Which consideration will inform the company's decision?",
+                options: [
+                    { label: "A", text: "Temperature", isCorrect: false },
+                    { label: "B", text: "Context window", isCorrect: true },
+                    { label: "C", text: "Batch size", isCorrect: false },
+                    { label: "D", text: "Model size", isCorrect: false }
+                ]
+            },
+            {
+                question: "24. A company wants to make a chatbot to help customers. The chatbot will help solve technical problems without human intervention. The company chose a foundation model (FM) for the chatbot. The chatbot needs to produce responses that adhere to company tone. Which solution meets these requirements?",
+                options: [
+                    { label: "A", text: "Set a low limit on the number of tokens the FM can produce.", isCorrect: false },
+                    { label: "B", text: "Use batch inferencing to process detailed responses.", isCorrect: false },
+                    { label: "C", text: "Experiment and refine the prompt until the FM produces the desired responses.", isCorrect: true },
+                    { label: "D", text: "Define a higher number for the temperature parameter.", isCorrect: false }
+                ]
+            },
+            {
+                question: "25. A company wants to use a large language model (LLM) on Amazon Bedrock for sentiment analysis. The company wants to classify the sentiment of text passages as positive or negative. Which prompt engineering strategy meets these requirements?",
+                options: [
+                    { label: "A", text: "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified.", isCorrect: true },
+                    { label: "B", text: "Provide a detailed explanation of sentiment analysis and how LLMs work in the prompt.", isCorrect: false },
+                    { label: "C", text: "Provide the new text passage to be classified without any additional context or examples.", isCorrect: false },
+                    { label: "D", text: "Provide the new text passage with a few examples of unrelated tasks, such as text summarization or question answering.", isCorrect: false }
+                ]
+            },
+            {
+                question: "26. A security company is using Amazon Bedrock to run foundation models (FMs). The company wants to ensure that only authorized users invoke the models. The company needs to identify any unauthorized access attempts to set appropriate AWS Identity and Access Management (IAM) policies and roles for future iterations of the FMs. Which AWS service should the company use to identify unauthorized users that are trying to access Amazon Bedrock?",
+                options: [
+                    { label: "A", text: "AWS Audit Manager", isCorrect: false },
+                    { label: "B", text: "AWS CloudTrail", isCorrect: true },
+                    { label: "C", text: "Amazon Fraud Detector", isCorrect: false },
+                    { label: "D", text: "AWS Trusted Advisor", isCorrect: false }
+                ]
+            },
+            {
+                question: "27. A company has developed an ML model for image classification. The company wants to deploy the model to production so that a web application can use the model. The company needs to implement a solution to host the model and serve predictions without managing any of the underlying infrastructure. Which solution will meet these requirements?",
+                options: [
+                    { label: "A", text: "Use Amazon SageMaker Serverless Inference to deploy the model.", isCorrect: true },
+                    { label: "B", text: "Use Amazon CloudFront to deploy the model.", isCorrect: false },
+                    { label: "C", text: "Use Amazon API Gateway to host the model and serve predictions.", isCorrect: false },
+                    { label: "D", text: "Use AWS Batch to host the model and serve predictions.", isCorrect: false }
+                ]
+            },
+            {
+                question: "28. An Al company periodically evaluates its systems and processes with the help of independent software vendors (ISVs). The company needs to receive email message notifications when an ISV's compliance reports become available. Which AWS service can the company use to meet this requirement?",
+                options: [
+                    { label: "A", text: "AWS Audit Manager", isCorrect: false },
+                    { label: "B", text: "AWS Artifact", isCorrect: true },
+                    { label: "C", text: "AWS Trusted Advisor", isCorrect: false },
+                    { label: "D", text: "AWS Data Exchange", isCorrect: false }
+                ]
+            },
+            {
+                question: "29. A company wants to use a large language model (LLM) to develop a conversational agent. The company needs to prevent the LLM from being manipulated with common prompt engineering techniques to perform undesirable actions or expose sensitive information. Which action will reduce these risks?",
+                options: [
+                    { label: "A", text: "Create a prompt template that teaches the LLM to detect attack patterns.", isCorrect: true },
+                    { label: "B", text: "Increase the temperature parameter on invocation requests to the LLM.", isCorrect: false },
+                    { label: "C", text: "Avoid using LLMs that are not listed in Amazon SageMaker.", isCorrect: false },
+                    { label: "D", text: "Decrease the number of input tokens on invocations of the LLM.", isCorrect: false }
+                ]
+            },
+            {
+                question: "30. A company is using the Generative Al Security Scoping Matrix to assess security responsibilities for its solutions. The company has identified four different solution scopes based on the matrix. Which solution scope gives the company the MOST ownership of security responsibilities?",
+                options: [
+                    { label: "A", text: "Using a third-party enterprise application that has embedded generative Al features.", isCorrect: false },
+                    { label: "B", text: "Building an application by using an existing third-party generative Al foundation model (FM).", isCorrect: false },
+                    { label: "C", text: "Refining an existing third-party generative Al foundation model (FM) by fine-tuning the model by using data specific to the business.", isCorrect: false },
+                    { label: "D", text: "Building and training a generative Al model from scratch by using specific data that a customer owns.", isCorrect: true }
+                ]
+            },
+            {
+                question: "31. An Al practitioner has a database of animal photos. The Al practitioner wants to automatically identify categorize the animals in the photos without manual human effort. Which strategy meets these requirements?",
+                options: [
+                    { label: "A", text: "Object detection", isCorrect: true },
+                    { label: "B", text: "Anomaly detection", isCorrect: false },
+                    { label: "C", text: "Named entity recognition", isCorrect: false },
+                    { label: "D", text: "Inpainting", isCorrect: false }
+                ]
+            },
+            {
+                question: "32. A company wants to create an application by using Amazon Bedrock. The company has a limited budget and prefers flexibility without long-term commitment. Which Amazon Bedrock pricing model meets these requirements?",
+                options: [
+                    { label: "A", text: "On-Demand", isCorrect: true },
+                    { label: "B", text: "Model customization", isCorrect: false },
+                    { label: "C", text: "Provisioned Throughput", isCorrect: false },
+                    { label: "D", text: "Spot Instance", isCorrect: false }
+                ]
+            },
+            {
+                question: "33. Which AWS service or feature can help an Al development team quickly deploy and consume a foundation model(FM) within the team's VPC?",
+                options: [
+                    { label: "A", text: "Amazon Personalize", isCorrect: false },
+                    { label: "B", text: "Amazon SageMaker JumpStart", isCorrect: true },
+                    { label: "C", text: "PartyRock, an Amazon Bedrock Playground", isCorrect: false },
+                    { label: "D", text: "Amazon SageMaker endpoints", isCorrect: false }
+                ]
+            },
+            {
+                question: "34. How can companies use large language models (LLMs) securely on Amazon Bedrock?",
+                options: [
+                    { label: "A", text: "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access.", isCorrect: true },
+                    { label: "B", text: "Enable AWS Audit Manager for automatic model evaluation jobs.", isCorrect: false },
+                    { label: "C", text: "Enable Amazon Bedrock automatic model evaluation jobs.", isCorrect: false },
+                    { label: "D", text: "Use Amazon CloudWatch Logs to make models explainable and to monitor for bias.", isCorrect: false }
+                ]
+            },
+            {
+                question: "35. A company has terabytes of data in a database that the company can use for business analysis. The company wants to build an Al-based application that can build a SQL query from input text that employees provide. The employees have minimal experience with technology. Which solution meets these requirements?",
+                options: [
+                    { label: "A", text: "Generative pre-trained transformers (GPT)", isCorrect: true },
+                    { label: "B", text: "Residual neural network", isCorrect: false },
+                    { label: "C", text: "Support vector machine", isCorrect: false },
+                    { label: "D", text: "WaveNet", isCorrect: false }
+                ]
+            },
+            {
+                question: "36. A company built a deep learning model for object detection and deployed the model to production. Which Al process occurs when the model analyzes a new image to identify objects?",
+                options: [
+                    { label: "A", text: "Training", isCorrect: false },
+                    { label: "B", text: "Inference", isCorrect: true },
+                    { label: "C", text: "Model deployment", isCorrect: false },
+                    { label: "D", text: "Bias correction", isCorrect: false }
+                ]
+            },
+            {
+                question: "37. An Al practitioner is building a model to generate images of humans in various professions. The Al practitioner discovered that the input data is biased and that specific attributes affect the image generation and create bias in the model. Which technique will solve the problem?",
+                options: [
+                    { label: "A", text: "Data augmentation for imbalanced classes", isCorrect: true },
+                    { label: "B", text: "Model monitoring for class distribution", isCorrect: false },
+                    { label: "C", text: "Retrieval Augmented Generation (RAG)", isCorrect: false },
+                    { label: "D", text: "Watermark detection for images", isCorrect: false }
+                ]
+            },
+            {
+                question: "38. A company is implementing the Amazon Titan foundation model (FM) by using Amazon Bedrock. The company needs to supplement the model by using relevant data from the company's private data sources. Which solution will meet this requirement?",
+                options: [
+                    { label: "A", text: "Use a different FM.", isCorrect: false },
+                    { label: "B", text: "Choose a lower temperature value.", isCorrect: false },
+                    { label: "C", text: "Create an Amazon Bedrock knowledge base.", isCorrect: true },
+                    { label: "D", text: "Enable model invocation logging.", isCorrect: false }
+                ]
+            },
+            {
+                question: "39. A medical company is customizing a foundation model (FM) for diagnostic purposes. The company needs the model to be transparent and explainable to meet regulatory requirements. Which solution will meet these requirements?",
+                options: [
+                    { label: "A", text: "Configure the security and compliance by using Amazon Inspector.", isCorrect: false },
+                    { label: "B", text: "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify", isCorrect: true },
+                    { label: "C", text: "Encrypt and secure training data by using Amazon Macie", isCorrect: false },
+                    { label: "D", text: "Gather more data. Use Amazon Rekognition to add custom labels to the data.", isCorrect: false }
+                ]
+            },
+            {
+                question: "40. A company wants to deploy a conversational chatbot to answer customer questions. The chatbot is based on a fine-tuned Amazon SageMaker JumpStart model. The application must comply with multiple regulatory frameworks. Which capabilities can the company show compliance for? (Choose two.)",
+                options: [
+                    { label: "A", text: "Auto scaling inference endpoints", isCorrect: false },
+                    { label: "B", text: "Threat detection", isCorrect: true },
+                    { label: "C", text: "Data protection", isCorrect: true },
+                    { label: "D", text: "Cost optimization", isCorrect: false },
+                    { label: "D", text: "Loosely coupled microservices", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
                 options: [
                     { label: "A", text: "Doritos", isCorrect: true },
                     { label: "B", text: "Banana", isCorrect: false },
                     { label: "C", text: "Apple", isCorrect: false },
                     { label: "D", text: "Mango", isCorrect: false }
                 ]
-            }
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+            {
+                question: "",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            },
+
         ];
 
         const quizContainer = document.createElement("div");
