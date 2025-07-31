@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Quiz Application</title>
+    <style>
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+(function() {
+    const PASSWORD = "mySecret123"; // Change this
+    const userPass = prompt("Enter password:");
+
+    if (userPass !== PASSWORD) {
+        document.body.innerHTML = "<h2 style='color:red;text-align:center'>Access Denied</h2>";
+        return; // stop everything
+    }
+
+    // If password is correct, run quiz code
+    startQuiz();
+
+    function startQuiz() {
+        const quizQuestions = [
+            {
+                question: "1. What color is the sky?",
+                options: [
+                    { label: "A", text: "Blue", isCorrect: true },
+                    { label: "B", text: "HTML", isCorrect: false },
+                    { label: "C", text: "JavaScript", isCorrect: false },
+                    { label: "D", text: "CSS", isCorrect: false }
+                ]
+            },
+            {
+                question: "2. Best WWF wrestler ever?",
+                options: [
+                    { label: "A", text: "Jake the Snake", isCorrect: false },
+                    { label: "B", text: "Andre the Giant", isCorrect: false },
+                    { label: "C", text: "Hulk Hogan", isCorrect: true },
+                    { label: "D", text: "The Undertaker", isCorrect: false }
+                ]
+            },
+            {
+                question: "3. Best NBA team of the 90's?",
+                options: [
+                    { label: "A", text: "Bulls", isCorrect: false },
+                    { label: "B", text: "Lakers", isCorrect: false },
+                    { label: "C", text: "Jazz", isCorrect: true },
+                    { label: "D", text: "Suns", isCorrect: false }
+                ]
+            },
+            {
+                question: "4. Which one is not a fruit?",
+                options: [
+                    { label: "A", text: "Doritos", isCorrect: true },
+                    { label: "B", text: "Banana", isCorrect: false },
+                    { label: "C", text: "Apple", isCorrect: false },
+                    { label: "D", text: "Mango", isCorrect: false }
+                ]
+            }
+        ];
+
+        const quizContainer = document.createElement("div");
+        quizContainer.id = "quiz-container";
+        document.body.appendChild(quizContainer);
+
+        renderQuiz();
+
+        function renderQuiz() {
+            quizQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `<h2>${q.question}</h2>`;
+                q.options.forEach(option => {
+                    questionDiv.innerHTML += `
+                        <label>
+                            <input type="checkbox" value="${option.label}" data-index="${index}"> 
+                            ${option.label}. ${option.text}
+                        </label><br>
+                    `;
+                });
+                questionDiv.innerHTML += `<button onclick="checkAnswers(${index})">Submit</button>`;
+                questionDiv.innerHTML += `<button onclick="resetAnswers(${index})">Reset</button>`;
+                questionDiv.innerHTML += `<div id="result-${index}" class="result"></div>`;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        window.checkAnswers = function(questionIndex) {
+            const resultDiv = document.getElementById(`result-${questionIndex}`);
+            resultDiv.innerHTML = '';
+
+            const checkboxes = document.querySelectorAll(`input[type="checkbox"][data-index="${questionIndex}"]`);
+            const selectedAnswers = [];
+
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    selectedAnswers.push(checkbox.value);
+                }
+            });
+
+            const correctAnswers = quizQuestions[questionIndex].options
+                .filter(opt => opt.isCorrect)
+                .map(opt => opt.label);
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.parentElement.style.color = '';
+            });
+
+            let isCorrect = true;
+
+            correctAnswers.forEach(answer => {
+                if (selectedAnswers.includes(answer)) {
+                    document.querySelector(`input[value="${answer}"][data-index="${questionIndex}"]`)
+                        .parentElement.style.color = 'green';
+                } else {
+                    resultDiv.innerHTML += `<p>${answer} is correct but not selected.</p>`;
+                    isCorrect = false;
+                }
+            });
+
+            selectedAnswers.forEach(answer => {
+                if (!correctAnswers.includes(answer)) {
+                    document.querySelector(`input[value="${answer}"][data-index="${questionIndex}"]`)
+                        .parentElement.style.color = 'red';
+                    resultDiv.innerHTML += `<p>${answer} is incorrect!</p>`;
+                    isCorrect = false;
+                }
+            });
+
+            if (isCorrect) {
+                resultDiv.innerHTML += `<p class="correct">Correct! 🎉</p>`;
+            } else {
+                resultDiv.innerHTML += `<p class="incorrect">Try again!</p>`;
+            }
+        };
+
+        window.resetAnswers = function(questionIndex) {
+            const checkboxes = document.querySelectorAll(`input[type="checkbox"][data-index="${questionIndex}"]`);
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                checkbox.parentElement.style.color = '';
+            });
+            document.getElementById(`result-${questionIndex}`).innerHTML = '';
+        };
+    }
+})();
+</script>
+
+</body>
+</html>
